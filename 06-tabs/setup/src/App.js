@@ -32,17 +32,23 @@ function App() {
     <div className='title'>
       <h2>experience</h2>
       <div className='underline'></div>
+    </div>
+    <div className='jobs-center'>
+
       {/* {btn container} */}
-      <div className="div-btn-container"></div>
-      {
-        jobs.map((item, index) => {
-          return <button key={index} onClick={() => 
-          setValue(index)}>
-            {item.company}
-          </button>
-        })
-      }
-      {/* {job info} */}
+      <div className="btn-container">
+        {
+          jobs.map((item, index) => {
+            return <button key={index} onClick={() =>
+              setValue(index)}
+              className={`job-btn ${index === value && 'active-btn'}`}
+            >
+              {item.company}
+            </button>
+          })
+        }
+        {/* {job info} */}
+      </div>
       <article className='job-info'>
         <h3>{title}</h3>
         <h4>{company}</h4>
