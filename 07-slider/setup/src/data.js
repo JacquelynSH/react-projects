@@ -10,7 +10,7 @@ const people = [
   },
   {
     id: 2,
-    image:
+    image: 
       'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg',
     name: 'john doe',
     title: 'regular guy',
