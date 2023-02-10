@@ -6,6 +6,14 @@ function App() {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = useState(0);
 
+useEffect (() => {
+  const lastIndex = people.length -1;
+if (index < 0) {
+  setIndex(lastIndex)
+} if (index > lastIndex) {
+  setIndex(0)
+}
+}, [index, people])
 
   return <section className='section'>
     <div className='title'>
@@ -23,7 +31,11 @@ function App() {
     } 
     if (personIndex === index - 1 || index === 0 && personIndex === people.length - 1)  {
       position = 'lastSlide'
-    }
+    } 
+
+
+
+    // if index 
         return (
           <article className={position} key={id}>
             <img src={image} alt={name} className='person-img' />
