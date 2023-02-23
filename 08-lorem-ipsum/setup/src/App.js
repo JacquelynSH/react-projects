@@ -4,16 +4,19 @@ function App() {
   const [count, setCount] = useState(0);
   const [text, setText] = useState([]);
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('hello world');
-    setText(data);
-    
+    if (count > 0) {
+    setText(data.slice(0, count));
+    } if (count < 0) {
+      alert("Must select atleast 1 paragraph")
+    }
   }
 
   const paragraphCount = (e) => {
     setCount(parseInt(e.target.value))
-    console.log(typeof(count))
   }
 
 
