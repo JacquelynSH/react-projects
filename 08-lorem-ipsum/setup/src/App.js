@@ -9,9 +9,7 @@ function App() {
     e.preventDefault();
     console.log('hello world');
     if (count > 0) {
-    setText(data.slice(0, count));
-    } if (count < 0) {
-      alert("Must select atleast 1 paragraph")
+      setText(data.slice(0, count));
     }
   }
 
@@ -27,7 +25,7 @@ function App() {
         <label htmlFor="amout">
           paragraphs:
         </label>
-        <input type="number" name='amount' id='amount' value={count}
+        <input type="number" name='amount' id='amount' min="1" max="8" value={count}
           onChange={paragraphCount}
         />
         <button type='submit' className='btn'>Generate</button>
